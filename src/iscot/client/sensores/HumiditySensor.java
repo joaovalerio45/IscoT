@@ -1,4 +1,4 @@
-package iscot.client;
+package iscot.client.sensores;
 
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
