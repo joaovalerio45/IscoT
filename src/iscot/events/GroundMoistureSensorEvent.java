@@ -1,5 +1,5 @@
 package iscot.events;
 
-public class GroundMoistureEvent extends SensorEvent {
+public class GroundMoistureSensorEvent extends SensorEvent {
     
 }

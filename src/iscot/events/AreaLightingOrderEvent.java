@@ -1,5 +1,5 @@
 package iscot.events;
 
-public class AreaLightningOrderEvent extends HighLevelOrderEvent{
+public class AreaLightingOrderEvent extends HighLevelOrderEvent{
 
 }
