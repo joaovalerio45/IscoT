@@ -1,5 +1,5 @@
 package iscot.events;
 
-public class HighLevelOrderEvent extends Event{
+public abstract class HighLevelOrderEvent extends Event{
       
 }
