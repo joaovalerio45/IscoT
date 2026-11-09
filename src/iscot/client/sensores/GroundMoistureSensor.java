@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import iscot.client.gui.SensorControl;
 import iscot.enums.Areas;
 
-public class GroundMoistureSensorEvent {
+public class GroundMoistureSensor {
 
 	/**
 	 * 

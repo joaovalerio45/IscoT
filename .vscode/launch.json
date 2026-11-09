@@ -1,5 +1,5 @@
 {
-    "version": "1.0",
+    "version": "0.2.0",
     "configurations": [
         {
             "type": "java",
@@ -10,17 +10,24 @@
         },
         {
             "type": "java",
-            "name": "Sensor Humidade (Kitchen)",
+            "name": "Sensor Temperatura (LivingRoom)",
             "request": "launch",
-            "mainClass": "iscot.client.sensores.HumiditySensor",
+            "mainClass": "iscot.client.sensores.TemperatureSensor",
+            "args": "localhost 8080 LivingRoom"
+        },
+        {
+            "type": "java",
+            "name": "Sensor Luz (Kitchen)",
+            "request": "launch",
+            "mainClass": "iscot.client.sensores.LightSensor",
             "args": "localhost 8080 Kitchen"
         },
         {
             "type": "java",
-            "name": "Sensor Humidade (WC)",
+            "name": "Sensor Humidade Solo (Garden)",
             "request": "launch",
-            "mainClass": "iscot.client.sensores.HumiditySensor",
-            "args": "localhost 8080 WC"
+            "mainClass": "iscot.client.sensores.GroundMoistureSensor",
+            "args": "localhost 8080 Garden"
         },
         {
             "type": "java",
@@ -31,24 +38,17 @@
         },
         {
             "type": "java",
-            "name": "Ventilador (Kitchen)",
+            "name": "Ar Condicionado (LivingRoom)",
             "request": "launch",
-            "mainClass": "iscot.client.actuadores.Ventilator",
-            "args": "localhost 8080 Kitchen"
-        },
-        {
-            "type": "java",
-            "name": "Sensor Luminosidade (LivingRoom)",
-            "request": "launch",
-            "mainClass": "iscot.client.sensores.LightSensor",
+            "mainClass": "iscot.client.actuadores.AC",
             "args": "localhost 8080 LivingRoom"
         },
         {
             "type": "java",
-            "name": "Lâmpada (LivingRoom)",
+            "name": "Lâmpada (Kitchen)",
             "request": "launch",
             "mainClass": "iscot.client.actuadores.Light",
-            "args": "localhost 8080 LivingRoom"
+            "args": "localhost 8080 Kitchen"
         },
         {
             "type": "java",
@@ -57,16 +57,42 @@
             "mainClass": "iscot.client.actuadores.Irrigation",
             "args": "localhost 8080 Garden"
         }
-            
     ],
-
-    
     "compounds": [
         {
-            "name": "Simulação Sala",
+            "name": "🚀 Correr Todos os 8 Clientes (4 Sensores + 4 Atuadores)",
             "configurations": [
                 "Sensor Humidade (LivingRoom)",
-                "Ventilador (LivingRoom)"
+                "Sensor Temperatura (LivingRoom)",
+                "Sensor Luz (Kitchen)",
+                "Sensor Humidade Solo (Garden)",
+                "Ventilador (LivingRoom)",
+                "Ar Condicionado (LivingRoom)",
+                "Lâmpada (Kitchen)",
+                "Rega (Garden)"
+            ]
+        },
+        {
+            "name": "🛋️ Correr Sala (LivingRoom: Humidade + Temp + Ventilador + AC)",
+            "configurations": [
+                "Sensor Humidade (LivingRoom)",
+                "Sensor Temperatura (LivingRoom)",
+                "Ventilador (LivingRoom)",
+                "Ar Condicionado (LivingRoom)"
+            ]
+        },
+        {
+            "name": "🍳 Correr Cozinha (Kitchen: Luz + Lâmpada)",
+            "configurations": [
+                "Sensor Luz (Kitchen)",
+                "Lâmpada (Kitchen)"
+            ]
+        },
+        {
+            "name": "🌿 Correr Jardim (Garden: Solo + Rega)",
+            "configurations": [
+                "Sensor Humidade Solo (Garden)",
+                "Rega (Garden)"
             ]
         }
     ]
