@@ -22,5 +22,4 @@ public abstract class Event implements Serializable{
         return type;
     }
 
-    public abstract void eventAction();
 }
