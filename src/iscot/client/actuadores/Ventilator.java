@@ -1,11 +1,7 @@
 package iscot.client.actuadores;
 
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.Socket;
 import java.net.UnknownHostException;
 
 import javax.swing.BorderFactory;
@@ -14,14 +10,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
-import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 import iscot.client.gui.VentilatorIcon;
 import iscot.enums.Areas;
-import iscot.enums.Type;
 
 public class Ventilator {
 
