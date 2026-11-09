@@ -12,6 +12,16 @@ import iscot.enums.Areas;
 
 public class Ventilator {
 
+	/**
+	 * 
+	 * @param server address and port
+	 * @param roomName: string
+	 * @throws IOException 
+	 * @throws UnknownHostException 
+	 * @throws NumberFormatException 
+	 * @throws InterruptedException 
+	 * @throws ClassNotFoundException 
+	 */
 	public static void main(String[] args) throws NumberFormatException, UnknownHostException, IOException, InterruptedException, ClassNotFoundException {
 		if(args.length!=3) {
 			System.err.println("Invalid arguments!");
