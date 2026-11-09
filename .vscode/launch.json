@@ -1,0 +1,51 @@
+{
+    "version": "1.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Sensor Humidade (LivingRoom)",
+            "request": "launch",
+            "mainClass": "iscot.client.sensores.HumiditySensor",
+            "args": "localhost 8080 LivingRoom"
+        },
+        {
+            "type": "java",
+            "name": "Sensor Humidade (Kitchen)",
+            "request": "launch",
+            "mainClass": "iscot.client.sensores.HumiditySensor",
+            "args": "localhost 8080 Kitchen"
+        },
+        {
+            "type": "java",
+            "name": "Sensor Humidade (WC)",
+            "request": "launch",
+            "mainClass": "iscot.client.sensores.HumiditySensor",
+            "args": "localhost 8080 WC"
+        },
+        {
+            "type": "java",
+            "name": "Ventilador (LivingRoom)",
+            "request": "launch",
+            "mainClass": "iscot.client.actuadores.Ventilator",
+            "args": "localhost 8080 LivingRoom"
+        },
+        {
+            "type": "java",
+            "name": "Ventilador (Kitchen)",
+            "request": "launch",
+            "mainClass": "iscot.client.actuadores.Ventilator",
+            "args": "localhost 8080 Kitchen"
+        }
+    ],
+
+    
+    "compounds": [
+        {
+            "name": "Simulação Sala",
+            "configurations": [
+                "Sensor Humidade (LivingRoom)",
+                "Ventilador (LivingRoom)"
+            ]
+        }
+    ]
+}
