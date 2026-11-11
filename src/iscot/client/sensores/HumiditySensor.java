@@ -1,10 +1,13 @@
 package iscot.client.sensores;
 
 import java.awt.BorderLayout;
+import java.io.IOException;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import iscot.client.gui.SensorControl;
 import iscot.enums.Areas;
+import iscot.events.HumiditySensorEvent;
 
 public class HumiditySensor {
 
@@ -38,8 +41,8 @@ public class HumiditySensor {
 			SensorControl sensorControl= new SensorControl( "☀", "Humidade - "+area, "%",
 				    0, 100, 1, 50,
 				    valor -> {
-				    	// TODO handle change in sensor
-				    	System.out.println("Mudou para:"+valor);
+				    	HumiditySensorEvent event = new HumiditySensorEvent(area, valor);
+				    	System.out.println("Evento gerado: " + event);
 				    });
 			painel.add(sensorControl,BorderLayout.CENTER);
 			janela.setContentPane(painel);

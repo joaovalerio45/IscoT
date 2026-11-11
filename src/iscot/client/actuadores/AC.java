@@ -8,7 +8,10 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 
 import iscot.client.gui.ACIcon;
+import iscot.enums.AirConditioningMode;
 import iscot.enums.Areas;
+import iscot.events.AreaTemperatureOrderEvent;
+import iscot.events.AreaVentilationOrderEvent;
 
 public class AC {
     
@@ -48,13 +51,17 @@ public class AC {
 			janela.pack();
 			janela.setVisible(true);
 			
-			Thread.sleep(5000);
-			ac.setAtivo(true);
 
 			// TODO: receive and handle messages from server
 			
-			// TODO: for first phase: create an appropriate event hardcoded locally and change the GUI accordingly
+			Thread.sleep(3000);
+			AreaTemperatureOrderEvent ordem = new AreaTemperatureOrderEvent(area, AirConditioningMode.Aquecimento, 20);
+			System.out.println("Atuador a processar: " + ordem);
+			ac.setModo(ordem.getMode());
+			ac.setTemperatura(ordem.getTargetTemperature());
+
 		}
+			
     }
     
 }

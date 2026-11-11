@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 import iscot.client.gui.VentilatorIcon;
 import iscot.enums.Areas;
+import iscot.events.AreaVentilationOrderEvent;
 
 public class Ventilator {
 
@@ -45,13 +46,13 @@ public class Ventilator {
 			janela.setMinimumSize(janela.getSize());
 			janela.pack();
 			janela.setVisible(true);
-			
-			Thread.sleep(5000);
-			ventilator.setAtivo(true);
 
 			// TODO: receive and handle messages from server
 			
-			// TODO: for first phase: create an appropriate event hardcoded locally and change the GUI accordingly
+			Thread.sleep(3000);
+			AreaVentilationOrderEvent ordem = new AreaVentilationOrderEvent(area, true);
+			System.out.println("Atuador a processar: " + ordem);
+			ventilator.setLigado(ordem.isOn());
 		}
 	}
 }
