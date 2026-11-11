@@ -1,6 +1,7 @@
 package iscot.client.actuadores;
 
 import java.awt.BorderLayout;
+import java.awt.geom.Area;
 import java.io.IOException;
 
 import java.net.UnknownHostException;
@@ -9,7 +10,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import iscot.client.gui.IrrigationIcon;
+import iscot.client.sensores.GroundMoistureSensor;
 import iscot.enums.Areas;
+import iscot.events.AreaIrrigationOrderEvent;
+
 public class Irrigation {
     /**
 	 * 
@@ -50,11 +54,16 @@ public class Irrigation {
 			janela.setVisible(true);
 			
 			Thread.sleep(5000);
-			rega.setAtivo(true);
+			AreaIrrigationOrderEvent evento = new AreaIrrigationOrderEvent(area, true,1,10);
+			System.out.println(evento);
+			rega.setZona(evento.getZona());
+			rega.setDuracao(evento.getDuracao());
+			rega.setAtiva(evento.getState());
 
 			// TODO: receive and handle messages from server
 			
 			// TODO: for first phase: create an appropriate event hardcoded locally and change the GUI accordingly
+
 		}
 	}
 }

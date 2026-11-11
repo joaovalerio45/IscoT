@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import iscot.client.gui.SensorControl;
 import iscot.enums.Areas;
+import iscot.events.LightSensorEvent;
+
 
 public class LightSensor {
   
@@ -42,7 +44,8 @@ public class LightSensor {
 			SensorControl sensorControl= new SensorControl( "☀", "Luminosidade - "+area, "lux",
 				    0, 1000, 1, 500,
 				    valor -> {
-				    	// TODO handle change in sensor
+				    	LightSensorEvent evento1 = new LightSensorEvent(area, valor);
+						System.out.println(evento1);
 				    	System.out.println("Luminosidade:"+valor);
 				    });
 			painel.add(sensorControl,BorderLayout.CENTER);

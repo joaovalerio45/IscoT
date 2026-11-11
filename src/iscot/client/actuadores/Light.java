@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 
 import iscot.client.gui.LightIcon;
 import iscot.enums.Areas;
+import iscot.events.AreaLightingOrderEvent;
 
 public class Light {
 
@@ -48,11 +49,14 @@ public class Light {
 			janela.setVisible(true);
 			
 			Thread.sleep(5000);
-			lampada.setAtivo(true);
+			AreaLightingOrderEvent evento = new AreaLightingOrderEvent(area, true);
+			System.out.println(evento);
+			lampada.setAtivo(evento.getState());
 
 			// TODO: receive and handle messages from server
 			
-			// TODO: for first phase: create an appropriate event hardcoded locally and change the GUI accordingly
+			
+
 		}
 	}
 }

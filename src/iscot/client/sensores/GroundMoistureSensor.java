@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import iscot.client.gui.SensorControl;
 import iscot.enums.Areas;
+import iscot.events.GroundMoistureSensorEvent;
 
 public class GroundMoistureSensor {
 
@@ -38,7 +39,8 @@ public class GroundMoistureSensor {
 			SensorControl sensorControl= new SensorControl( "☀", "Humidade no solo - "+area, "%",
 				    0, 100, 1, 50,
 				    valor -> {
-				    	// TODO handle change in sensor
+				    	GroundMoistureSensorEvent evento = new GroundMoistureSensorEvent(area, valor);
+						System.out.println(evento);
 				    	System.out.println("Mudou para:"+valor);
 				    });
 			painel.add(sensorControl,BorderLayout.CENTER);
