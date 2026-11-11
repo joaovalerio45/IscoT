@@ -1,27 +1,24 @@
 package iscot.events;
+
 import iscot.enums.Areas;
 
-public class LightSensorEvent extends SensorEvent{
-    
-    private final double light;
+public class LightSensorEvent extends SensorEvent {
 
     public LightSensorEvent(Areas area, double light) {
-        super(area);
+        super(area, light);
         if (!Double.isFinite(light) || light < 0) {
             throw new IllegalArgumentException(
                 "A luminosidade deve ser um valor finito e não negativo."
             );
         }
-        this.light = light;
     }
 
     public double getLight() {
-        return light;
+        return getValue();
     }
 
-
     @Override
-    public String toString(){
-        return "LightSensorEvent [light =" + light + ", area =" + getArea() + ", type=" + getType() + "]";
+    public String toString() {
+        return "LightSensorEvent [light=" + getValue() + ", area=" + getArea() + ", type=" + getType() + "]";
     }
 }
