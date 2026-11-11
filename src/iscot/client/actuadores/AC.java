@@ -11,7 +11,6 @@ import iscot.client.gui.ACIcon;
 import iscot.enums.AirConditioningMode;
 import iscot.enums.Areas;
 import iscot.events.AreaTemperatureOrderEvent;
-import iscot.events.AreaVentilationOrderEvent;
 
 public class AC {
     
