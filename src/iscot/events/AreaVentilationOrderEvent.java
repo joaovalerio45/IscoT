@@ -17,7 +17,7 @@ public class AreaVentilationOrderEvent extends HighLevelOrderEvent{
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + " [area=" + getArea() + ", type=" + getType() + ", isOn=" + getIsOn() +"]";
+        return getClass().getSimpleName() + " [area=" + getArea() + ", type=" + getType() + ", isOn=" + isOn() +"]";
     }
 }
     
