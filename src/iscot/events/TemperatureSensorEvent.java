@@ -6,9 +6,9 @@ public class TemperatureSensorEvent extends SensorEvent {
 
     public TemperatureSensorEvent(Areas area, double temperature) {
         super(area, temperature);
-        if (!Double.isFinite(temperature)) {
+        if (!Double.isFinite(temperature) || temperature < 0 || temperature > 30) {
             throw new IllegalArgumentException(
-                "A temperatura deve ser um valor finito."
+                "A temperatura ambiente deve estar entre 0 °C e 30 °C."
             );
         }
     }
