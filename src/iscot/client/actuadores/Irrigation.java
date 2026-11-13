@@ -1,7 +1,6 @@
 package iscot.client.actuadores;
 
 import java.awt.BorderLayout;
-import java.awt.geom.Area;
 import java.io.IOException;
 
 import java.net.UnknownHostException;
@@ -10,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import iscot.client.gui.IrrigationIcon;
-import iscot.client.sensores.GroundMoistureSensor;
 import iscot.enums.Areas;
 import iscot.events.AreaIrrigationOrderEvent;
 
